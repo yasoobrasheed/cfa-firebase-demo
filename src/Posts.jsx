@@ -37,21 +37,27 @@ const Posts = () => {
   return (
     <>
       <form onSubmit={() => writePost(posts.length + 1, content, imgsrc)}>
-        <label>
-          Content:
-          <input type="text" value={content} onChange={() => setContent(event.target.value)} />
-        </label>
-        <label>
-          Image Source:
-          <input type="text" value={imgsrc} onChange={() => setImgSrc(event.target.value)} />
-        </label>
-        <input type="submit" value="Submit" />
+        <div>
+          <label>
+            Content:
+            <input type="text" value={content} onChange={() => setContent(event.target.value)} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Image Source:
+            <input type="text" value={imgsrc} onChange={() => setImgSrc(event.target.value)} />
+          </label>
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
       </form>
       {posts.map(
         post => (
           <div>
-            <p>{post.content}</p> 
-            <img src={post.imgsrc}/>
+            <p>{post.content}</p>
+            <img src={post.imgsrc} />
           </div>
         )
       )}
