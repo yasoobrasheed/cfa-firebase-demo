@@ -12,12 +12,10 @@ const Posts = () => {
     const dbRef = ref(db, 'posts/');
     onValue(dbRef, (snapshot) => {
       const dbTable = snapshot.val();
-
       const newPosts = []
       dbTable.forEach((dbItem) => {
         newPosts.push(dbItem)
       })
-      console.log(newPosts)
       setPosts(newPosts)
     })
   }
